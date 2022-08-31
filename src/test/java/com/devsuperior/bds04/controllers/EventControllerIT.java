@@ -130,7 +130,7 @@ public class EventControllerIT {
 		
 		result.andExpect(status().isUnprocessableEntity());
 		result.andExpect(jsonPath("$.errors[0].fieldName").value("name"));
-		result.andExpect(jsonPath("$.errors[0].message").value("Campo requerido"));
+		result.andExpect(jsonPath("$.errors[0].message").value("Name can not be blank!"));
 	}
 
 	@Test
@@ -151,7 +151,7 @@ public class EventControllerIT {
 		
 		result.andExpect(status().isUnprocessableEntity());
 		result.andExpect(jsonPath("$.errors[0].fieldName").value("date"));
-		result.andExpect(jsonPath("$.errors[0].message").value("A data do evento não pode ser passada"));
+		result.andExpect(jsonPath("$.errors[0].message").value("Date of event can not be passad!"));
 	}
 
 	@Test
@@ -172,7 +172,7 @@ public class EventControllerIT {
 		
 		result.andExpect(status().isUnprocessableEntity());
 		result.andExpect(jsonPath("$.errors[0].fieldName").value("cityId"));
-		result.andExpect(jsonPath("$.errors[0].message").value("Campo requerido"));
+		result.andExpect(jsonPath("$.errors[0].message").value("City can not be a Null value!"));
 	}
 
 	@Test
